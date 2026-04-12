@@ -7,15 +7,15 @@
 <style>
   :root {
     --ink: #0f1117;
-    --paper: #f5f2ed;
+    --paper: #f8f7f5;
     --cream: #ede8e0;
     --steel: #2b3a52;
     --rust: #c0622a;
     --rust-light: #e8845a;
     --muted: #6b7280;
-    --border: #d4cfc7;
-    --serif: 'Arial Black', sans-serif;
-    --sans: 'Arial', sans-serif;
+    --border: #e5e0d8;
+    --serif: 'Georgia', serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -26,30 +26,31 @@
     font-family: var(--sans);
     background: var(--paper);
     color: var(--ink);
-    font-size: 16px;
-    line-height: 1.7;
+    font-size: 15px;
+    line-height: 1.65;
   }
 
   /* ── NAV ── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(245,242,237,0.92);
-    backdrop-filter: blur(12px);
+    background: rgba(248, 247, 245, 0.95);
+    backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--border);
     display: flex; align-items: center; justify-content: space-between;
-    padding: 0 3rem; height: 64px;
+    padding: 0 3rem; height: 56px;
   }
   .nav-name {
     font-family: var(--serif);
-    font-size: 1.1rem;
-    letter-spacing: 0.01em;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    font-weight: 500;
   }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a {
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 500;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--muted);
     transition: color 0.2s;
@@ -61,131 +62,141 @@
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-top: 64px;
+    padding-top: 56px;
   }
   .hero-left {
     background: var(--steel);
     color: white;
-    padding: 5rem 4rem;
+    padding: 6rem 5rem;
     display: flex; flex-direction: column; justify-content: center;
     position: relative; overflow: hidden;
   }
   .hero-left::before {
     content: '';
-    position: absolute; top: -60px; right: -60px;
-    width: 300px; height: 300px;
+    position: absolute; top: -80px; right: -80px;
+    width: 280px; height: 280px;
     border-radius: 50%;
-    background: rgba(192,98,42,0.18);
+    background: rgba(192, 98, 42, 0.12);
   }
   .hero-left::after {
     content: '';
-    position: absolute; bottom: -80px; left: -40px;
-    width: 200px; height: 200px;
+    position: absolute; bottom: -100px; left: -50px;
+    width: 220px; height: 220px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.03);
   }
   .hero-tag {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--rust-light);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
   }
   .hero-title {
     font-family: var(--serif);
-    font-size: clamp(2.8rem, 5vw, 4.5rem);
-    line-height: 1.08;
+    font-size: clamp(2.8rem, 4.5vw, 4rem);
+    line-height: 1.1;
     margin-bottom: 1.5rem;
     position: relative; z-index: 1;
+    font-weight: 400;
   }
   .hero-title em {
     font-style: italic;
     color: var(--rust-light);
   }
   .hero-sub {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: rgba(255,255,255,0.72);
-    max-width: 440px;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 420px;
     position: relative; z-index: 1;
   }
   .hero-contact {
-    margin-top: 2.5rem;
-    display: flex; flex-direction: column; gap: 0.4rem;
+    margin-top: 2rem;
+    display: flex; flex-direction: column; gap: 0.3rem;
     position: relative; z-index: 1;
   }
   .hero-contact span {
-    font-size: 0.88rem;
-    color: rgba(255,255,255,0.6);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.55);
   }
-  .hero-contact a { color: rgba(255,255,255,0.6); text-decoration: none; }
+  .hero-contact a { color: rgba(255, 255, 255, 0.55); text-decoration: none; }
   .hero-contact a:hover { color: var(--rust-light); }
 
   .hero-right {
-    background: var(--cream);
-    padding: 5rem 4rem;
+    background: white;
+    padding: 6rem 5rem;
     display: flex; flex-direction: column; justify-content: center;
     gap: 2.5rem;
+    border-left: 1px solid var(--border);
   }
   .hero-right h2 {
     font-family: var(--serif);
-    font-size: 1.6rem;
-    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+  .hero-right > div:first-child p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
   }
   .stat-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;
   }
   .stat-card {
-    background: white;
+    background: var(--paper);
     border: 1px solid var(--border);
-    padding: 1.4rem;
-    border-radius: 2px;
+    padding: 1.2rem 1rem;
+    border-radius: 0;
   }
   .stat-num {
     font-family: var(--serif);
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     color: var(--rust);
     line-height: 1;
+    font-weight: 400;
   }
   .stat-label {
-    font-size: 0.82rem;
+    font-size: 0.77rem;
     color: var(--muted);
-    margin-top: 0.35rem;
-    line-height: 1.4;
-    font-weight: 500;
+    margin-top: 0.4rem;
+    line-height: 1.5;
+    font-weight: 400;
   }
 
   /* ── SECTION WRAPPER ── */
-  section { padding: 5rem 0; }
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 3rem; }
+  section { padding: 5.5rem 0; }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 3rem; }
 
   .section-label {
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 700;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--rust);
     margin-bottom: 0.8rem;
   }
   .section-title {
     font-family: var(--serif);
-    font-size: clamp(2rem, 3.5vw, 2.8rem);
-    line-height: 1.15;
-    margin-bottom: 1rem;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
     color: var(--steel);
+    font-weight: 400;
   }
   .section-lead {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     color: var(--muted);
-    max-width: 640px;
-    margin-bottom: 3rem;
-    line-height: 1.8;
+    max-width: 580px;
+    margin-bottom: 2.5rem;
+    line-height: 1.75;
   }
   .divider {
-    width: 48px; height: 3px;
+    width: 40px; height: 2px;
     background: var(--rust);
-    margin: 1.2rem 0 2rem;
+    margin: 1rem 0 2rem;
   }
 
   /* ── ABOUT / LANDING PAGE CONTENT ── */
@@ -196,9 +207,9 @@
     gap: 4rem;
     align-items: start;
   }
-  .about-body { font-size: 1rem; line-height: 1.9; color: #3a3a3a; }
+  .about-body { font-size: 0.95rem; line-height: 1.8; color: #2a2a2a; }
   .about-body p { margin-bottom: 1.2rem; }
-  .about-image { max-width: 100%; height: auto; border-radius: 2px; }
+  .about-image { max-width: 100%; height: auto; border-radius: 0; border: 1px solid var(--border); }
 
   .projects-list { display: flex; flex-direction: column; gap: 1.2rem; }
   .project-item {
@@ -208,85 +219,86 @@
   }
   .project-item h4 {
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     margin-bottom: 0.3rem;
     color: var(--steel);
   }
-  .project-item p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+  .project-item p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
 
   /* ── CV ── */
   #cv { background: var(--paper); }
   .cv-layout {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
+    grid-template-columns: 240px 1fr;
+    gap: 3.5rem;
     align-items: start;
   }
   .cv-sidebar {}
-  .cv-sidebar-section { margin-bottom: 2.5rem; }
+  .cv-sidebar-section { margin-bottom: 2rem; }
   .cv-sidebar-section h3 {
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--rust);
-    margin-bottom: 1rem;
+    margin-bottom: 0.9rem;
     padding-bottom: 0.4rem;
     border-bottom: 1px solid var(--border);
   }
   .skill-tag {
     display: inline-block;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     background: white;
     border: 1px solid var(--border);
-    padding: 0.3rem 0.7rem;
-    margin: 0.25rem 0.25rem 0 0;
-    border-radius: 2px;
+    padding: 0.3rem 0.65rem;
+    margin: 0.2rem 0.2rem 0 0;
+    border-radius: 0;
     color: var(--steel);
   }
-  .edu-item { margin-bottom: 1.2rem; }
-  .edu-item h4 { font-size: 0.92rem; font-weight: 600; color: var(--steel); }
-  .edu-item p { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+  .edu-item { margin-bottom: 1rem; }
+  .edu-item h4 { font-size: 0.88rem; font-weight: 600; color: var(--steel); line-height: 1.4; }
+  .edu-item p { font-size: 0.78rem; color: var(--muted); line-height: 1.6; margin-top: 0.2rem; }
 
   .cv-main {}
   .exp-item {
     border-bottom: 1px solid var(--border);
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
+    padding-bottom: 1.8rem;
+    margin-bottom: 1.8rem;
   }
   .exp-item:last-child { border-bottom: none; }
   .exp-header {
     display: flex; justify-content: space-between; align-items: flex-start;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     gap: 1rem;
   }
   .exp-header h3 {
     font-family: var(--serif);
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     color: var(--steel);
+    font-weight: 400;
   }
   .exp-date {
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     color: var(--rust);
     font-weight: 600;
     white-space: nowrap;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.05em;
   }
-  .exp-company { font-size: 0.88rem; color: var(--muted); margin-bottom: 0.8rem; }
+  .exp-company { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.7rem; font-weight: 500; }
   .exp-bullets { list-style: none; padding: 0; }
   .exp-bullets li {
-    font-size: 0.92rem;
-    color: #3a3a3a;
-    padding-left: 1.2rem;
+    font-size: 0.88rem;
+    color: #2a2a2a;
+    padding-left: 1.1rem;
     position: relative;
     margin-bottom: 0.5rem;
-    line-height: 1.65;
+    line-height: 1.6;
   }
   .exp-bullets li::before {
     content: '—';
     position: absolute; left: 0;
     color: var(--rust);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
 
   /* ── REFLECTION ── */
@@ -294,92 +306,73 @@
   .reflection-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 1.8rem;
   }
+  
+  /* Primary cards - stronger visual weight */
+  .reflection-card.primary {
+    border: 2px solid var(--rust);
+    padding: 2rem;
+    background: rgba(192, 98, 42, 0.03);
+  }
+  .reflection-card.primary h3 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: var(--steel);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  
+  /* Secondary cards - standard weight */
   .reflection-card {
     border: 1px solid var(--border);
-    padding: 2rem;
+    padding: 1.8rem;
+    background: white;
   }
   .reflection-card h3 {
     font-family: var(--serif);
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: var(--steel);
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
   }
-  .reflection-card p { font-size: 0.93rem; color: #3a3a3a; line-height: 1.8; }
+  .reflection-card p { font-size: 0.88rem; color: #2a2a2a; line-height: 1.75; }
+  
+  /* Full-width summary */
   .reflection-card.full {
     grid-column: 1 / -1;
+    border: 1px solid var(--rust);
+    background: rgba(192, 98, 42, 0.02);
   }
-
-  /* ── COVER LETTER ── */
-  #coverletter { background: var(--cream); }
-  .letter-wrap {
-    background: white;
-    border: 1px solid var(--border);
-    padding: 4rem;
-    max-width: 800px;
-  }
-  .letter-header { margin-bottom: 2.5rem; }
-  .letter-header h3 {
+  .reflection-card.full h3 {
     font-family: var(--serif);
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     color: var(--steel);
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-bottom: 1rem;
   }
-  .letter-date { font-size: 0.88rem; color: var(--muted); margin-top: 0.3rem; }
-  .letter-addressee { margin: 2rem 0; font-size: 0.95rem; }
-  .letter-addressee strong { color: var(--steel); }
-  .letter-re {
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-    color: var(--steel);
-  }
-  .letter-body p { font-size: 0.95rem; line-height: 1.9; color: #2a2a2a; margin-bottom: 1.1rem; }
-  .criteria-block { margin: 2.5rem 0; }
-  .criteria-item { margin-bottom: 2rem; }
-  .criteria-num {
-    display: flex; align-items: center; gap: 0.8rem;
-    margin-bottom: 0.6rem;
-  }
-  .criteria-badge {
-    background: var(--rust);
-    color: white;
-    font-size: 0.72rem;
-    font-weight: 700;
-    padding: 0.25rem 0.6rem;
-    letter-spacing: 0.06em;
-  }
-  .criteria-title-text {
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: var(--steel);
-    font-style: italic;
-  }
-  .criteria-response {
-    font-size: 0.93rem;
-    line-height: 1.9;
-    color: #3a3a3a;
-    padding-left: 1rem;
-    border-left: 2px solid var(--border);
-  }
-  .letter-sign { margin-top: 2.5rem; font-size: 0.95rem; }
-  .letter-sign p { color: #2a2a2a; margin-bottom: 0.3rem; }
-  .letter-sign strong { font-family: var(--serif); font-size: 1.2rem; display: block; margin-top: 1.2rem; color: var(--steel); }
+  .reflection-card.full p { font-size: 0.9rem; color: #2a2a2a; line-height: 1.8; }
 
   /* ── FOOTER ── */
   footer {
     background: var(--steel);
-    color: rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.45);
     text-align: center;
-    padding: 2rem;
-    font-size: 0.82rem;
+    padding: 1.8rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
   }
 
   /* ── ANIMATIONS ── */
   .fade-in {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(15px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
   }
   .fade-in.visible {
     opacity: 1;
@@ -387,14 +380,26 @@
   }
 
   /* ── RESPONSIVE ── */
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     #home { grid-template-columns: 1fr; }
+    .hero-left, .hero-right { padding: 4rem 3rem; }
+    .hero-right { border-left: none; border-top: 1px solid var(--border); }
     .about-grid, .cv-layout, .reflection-grid { grid-template-columns: 1fr; }
-    nav { padding: 0 1.5rem; }
-    .nav-links { gap: 1rem; }
+    .cv-layout { grid-template-columns: 1fr; }
+    nav { padding: 0 2rem; }
+    .nav-links { gap: 1.5rem; }
+    .container { padding: 0 2rem; }
+  }
+
+  @media (max-width: 600px) {
+    nav { padding: 0 1.5rem; height: 52px; }
+    .nav-name { font-size: 0.85rem; }
+    .nav-links { gap: 1rem; font-size: 0.7rem; }
+    .stat-grid { grid-template-columns: 1fr; }
+    .hero-left, .hero-right { padding: 3rem 1.5rem; }
     .container { padding: 0 1.5rem; }
-    .letter-wrap { padding: 2rem; }
-    .hero-left, .hero-right { padding: 3rem 2rem; }
+    section { padding: 4rem 0; }
+    .reflection-grid { gap: 1.2rem; }
   }
 </style>
 </head>
@@ -407,7 +412,6 @@
     <li><a href="#about">About</a></li>
     <li><a href="#cv">CV</a></li>
     <li><a href="#reflection">Reflection</a></li>
-
   </ul>
 </nav>
 
@@ -426,7 +430,7 @@
   <div class="hero-right">
     <div>
       <h2>At a Glance</h2>
-      <p style="font-size:0.93rem;color:var(--muted);line-height:1.8;">Bachelor of Engineering (Honours) — Mechanical, University of Technology Sydney. WAM: Distinction. Member, Engineers Australia.</p>
+      <p>Bachelor of Engineering (Honours) — Mechanical, University of Technology Sydney. WAM: Distinction. Member, Engineers Australia.</p>
     </div>
     <div class="stat-grid">
       <div class="stat-card">
@@ -438,12 +442,12 @@
         <div class="stat-label">Major Sydney infrastructure projects delivered</div>
       </div>
       <div class="stat-card">
-        <div class="stat-n3um">5</div>
+        <div class="stat-num">5</div>
         <div class="stat-label">Subcontractors independently managed</div>
       </div>
       <div class="stat-card">
         <div class="stat-num">⭐</div>
-        <div class="stat-label">Six-star hotel &amp; award-winning metro station in portfolio</div>
+        <div class="stat-label">Six-star hotel & award-winning metro station in portfolio</div>
       </div>
     </div>
   </div>
@@ -452,8 +456,8 @@
 <!-- ABOUT / LANDING PAGE NARRATIVE -->
 <section id="about">
   <div class="container">
-    <p class="section-label">Landing Page</p>
-    <h2 class="section-title">Who I Am &amp; Why Engineering</h2>
+    <p class="section-label">About</p>
+    <h2 class="section-title">Who I Am & Why Engineering</h2>
     <div class="divider"></div>
     <div class="about-grid fade-in">
       <div class="about-body">
@@ -463,7 +467,9 @@
         <p>These experiences have shaped my understanding of what engineering looks like in practice: it's technically demanding, commercially driven, and deeply dependent on the ability to communicate clearly across disciplines and stakeholder groups. That's the kind of work I want to keep doing.</p>
       </div>
       <div>
-        <img src="portfolio-image.jpg" alt="James Gianoutsos" class="about-image">
+        <div style="background: var(--paper); border: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); font-size: 0.9rem;">
+          [Portfolio image]
+        </div>
       </div>
     </div>
   </div>
@@ -472,8 +478,8 @@
 <!-- CV -->
 <section id="cv">
   <div class="container">
-    <p class="section-label">Curriculum Vitae</p>
-    <h2 class="section-title">Professional Profile</h2>
+    <p class="section-label">Professional Profile</p>
+    <h2 class="section-title">Curriculum Vitae</h2>
     <div class="divider"></div>
     <div class="cv-layout fade-in">
 
@@ -483,7 +489,7 @@
           <h3>Education</h3>
           <div class="edu-item">
             <h4>BE (Hons) Mechanical Engineering</h4>
-            <p>University of Technology Sydney<br>Jan 2023 – Present<br><strong>WAM: Distinction</strong></p>
+            <p>University of Technology Sydney<br>Jan 2023 – Present<br><strong style="color: var(--rust);">WAM: Distinction</strong></p>
           </div>
           <div class="edu-item">
             <h4>Higher School Certificate</h4>
@@ -505,23 +511,23 @@
         </div>
         <div class="cv-sidebar-section">
           <h3>Transferable Skills</h3>
-          <div style="font-size:0.88rem;color:#3a3a3a;line-height:1.7;">
-            <p style="margin-bottom:0.8rem;"><strong>Communication</strong><br>Commended by management for clear, effective written and verbal communication — including explaining engineering topics to non-engineers.</p>
-            <p style="margin-bottom:0.8rem;"><strong>Teamwork</strong><br>Recognised by colleagues for contributing to complex engineering and project management tasks both internally and with external parties.</p>
+          <div style="font-size:0.82rem;color:#2a2a2a;line-height:1.7;">
+            <p style="margin-bottom:0.6rem;"><strong>Communication</strong><br>Commended by management for clear, effective written and verbal communication — including explaining engineering topics to non-engineers.</p>
+            <p style="margin-bottom:0.6rem;"><strong>Teamwork</strong><br>Recognised by colleagues for contributing to complex engineering and project management tasks both internally and with external parties.</p>
             <p><strong>Engineering Expertise</strong><br>Applied thermodynamic modelling, Excel-based data analysis, and design of testing apparatus across internal and external projects.</p>
           </div>
         </div>
         <div class="cv-sidebar-section">
           <h3>Professional Memberships</h3>
-          <div style="font-size:0.88rem;color:#3a3a3a;">
-            <p>Engineers Australia<br><span style="color:var(--muted);">Student Member — EA ID: 9500060<br>Jan 2023 – Present</span></p>
+          <div style="font-size:0.82rem;color:#2a2a2a;">
+            <p>Engineers Australia<br><span style="color:var(--muted); font-size: 0.75rem;">Student Member — EA ID: 9500060<br>Jan 2023 – Present</span></p>
           </div>
         </div>
         <div class="cv-sidebar-section">
           <h3>Contact</h3>
-          <div style="font-size:0.88rem;color:#3a3a3a;line-height:1.8;">
+          <div style="font-size:0.82rem;color:#2a2a2a;line-height:1.8;">
             <p>+61 447 028 262</p>
-            <p>jgianoutsos@me.com</p>
+            <p><a href="mailto:jgianoutsos@me.com" style="color: var(--rust); text-decoration: none;">jgianoutsos@me.com</a></p>
             <p>Sydney, Australia</p>
           </div>
         </div>
@@ -529,9 +535,9 @@
 
       <!-- MAIN -->
       <div class="cv-main">
-        <p style="font-size:0.95rem;color:#3a3a3a;line-height:1.85;margin-bottom:2.5rem;">Motivated Mechanical Engineering student at UTS with over two years of hands-on experience as an Undergraduate Engineer and Project Manager at Fredon. Proven track record delivering complex mechanical and life safety systems across high-profile Sydney projects. Adept at managing subcontractors, budgets, procurement, and client relationships, with a strong ability to bridge technical and non-technical stakeholders.</p>
+        <p style="font-size:0.92rem;color:#2a2a2a;line-height:1.8;margin-bottom:2rem;">Motivated Mechanical Engineering student at UTS with over two years of hands-on experience as an Undergraduate Engineer and Project Manager at Fredon. Proven track record delivering complex mechanical and life safety systems across high-profile Sydney projects. Adept at managing subcontractors, budgets, procurement, and client relationships, with a strong ability to bridge technical and non-technical stakeholders.</p>
 
-        <h3 style="font-family:var(--serif);font-size:1.2rem;color:var(--steel);margin-bottom:1.5rem;padding-bottom:0.4rem;border-bottom:1px solid var(--border);">Employment History</h3>
+        <h3 style="font-family:var(--serif);font-size:1rem;color:var(--steel);margin-bottom:1.3rem;padding-bottom:0.4rem;border-bottom:1px solid var(--border); font-weight: 400;">Employment</h3>
 
         <div class="exp-item">
           <div class="exp-header">
@@ -548,11 +554,11 @@
           </ul>
         </div>
 
-        <h3 style="font-family:var(--serif);font-size:1.2rem;color:var(--steel);margin:2rem 0 1.5rem;padding-bottom:0.4rem;border-bottom:1px solid var(--border);">Relevant Projects</h3>
+        <h3 style="font-family:var(--serif);font-size:1rem;color:var(--steel);margin:1.8rem 0 1.3rem;padding-bottom:0.4rem;border-bottom:1px solid var(--border); font-weight: 400;">Key Projects</h3>
 
         <div class="exp-item">
           <div class="exp-header">
-            <h3>Sydney Metro Gadigal Station &amp; Over-station Developments</h3>
+            <h3>Sydney Metro Gadigal Station & Over-station Developments</h3>
             <span class="exp-date">Dec 2023 – Aug 2025</span>
           </div>
           <p class="exp-company">Undergraduate Engineer — Fredon</p>
@@ -616,6 +622,14 @@
     <div class="divider"></div>
     <p class="section-lead">A reflection on two years of hands-on experience in building services contracting — the expectations, the surprises, and the lessons that will shape my career.</p>
     <div class="reflection-grid fade-in">
+      <div class="reflection-card primary">
+        <h3>Most Important Lessons</h3>
+        <p>The two most important lessons were <strong>stakeholder communication</strong> and <strong>subcontractor management</strong>. On communication, I quickly learned that clearly conveying technical information to people with varying levels of engineering knowledge — clients, project managers, and tradespeople on-site — was both the hardest and most critical skill to develop. Misunderstandings at this level cost time and money. On subcontractor management, keeping multiple parties accountable requires firmness and relationship-building in equal measure. These skills cannot be taught in a classroom.</p>
+      </div>
+      <div class="reflection-card primary">
+        <h3>Career Direction</h3>
+        <p>My internship has firmly pointed me toward a career in <strong>project management within building services or construction</strong>. Seeing how effective project management directly determines whether a project is delivered on time and within budget — and experiencing the satisfaction of driving that outcome myself — confirmed that this is the kind of work I want to pursue. The breadth of technical and commercial exposure I have gained places me in a strong position relative to most graduating students.</p>
+      </div>
       <div class="reflection-card">
         <h3>Expectations Before Starting</h3>
         <p>Before beginning at Fredon, I had limited insight into what working in building services contracting would look like in practice. I assumed it would differ significantly from the theoretical environment of university — particularly given that commercial engineering is largely financially driven. I anticipated needing to develop financial literacy quickly and expected a reasonable amount of time on-site. Beyond that, much of the day-to-day reality was unknown to me.</p>
@@ -624,14 +638,6 @@
         <h3>The Reality</h3>
         <p>The experience largely aligned with my expectations, though in some ways it surprised me. The engineering work was more high-level than I anticipated — rather than hands-on calculations from first principles, the focus was on system implementation, design compliance, and working efficiently within established frameworks and teams. What genuinely surprised me was the scale of the commercial and procurement dimension: exposure to contract negotiations, budget management, and subcontractor coordination was something I had not previously considered.</p>
       </div>
-      <div class="reflection-card">
-        <h3>Most Important Lessons</h3>
-        <p>The two most important lessons were <strong>stakeholder communication</strong> and <strong>subcontractor management</strong>. On communication, I quickly learned that clearly conveying technical information to people with varying levels of engineering knowledge — clients, project managers, and tradespeople on-site — was both the hardest and most critical skill to develop. Misunderstandings at this level cost time and money. On subcontractor management, keeping multiple parties accountable requires firmness and relationship-building in equal measure. These skills cannot be taught in a classroom.</p>
-      </div>
-      <div class="reflection-card">
-        <h3>Career Direction</h3>
-        <p>My internship has firmly pointed me toward a career in <strong>project management within building services or construction</strong>. Seeing how effective project management directly determines whether a project is delivered on time and within budget — and experiencing the satisfaction of driving that outcome myself — confirmed that this is the kind of work I want to pursue. The breadth of technical and commercial exposure I have gained places me in a strong position relative to most graduating students.</p>
-      </div>
       <div class="reflection-card full">
         <h3>Value Proposition to an Employer</h3>
         <p>My value proposition is the combination of technical engineering knowledge and hands-on project management experience at a level uncommon for a graduating student. Having independently run a fit-out project, contributed to major infrastructure at Sydney Metro Gadigal Station, helped design and manage the Sydney Biomedical Accelerator and the Waldorf Astoria mechanical package, and managed subcontractors and procurement across multiple live projects, I can demonstrate the ability to add real value from day one. My track record of operating with minimal supervision and receiving commendation for my communication are concrete examples I can speak to in any professional setting.</p>
@@ -639,7 +645,6 @@
     </div>
   </div>
 </section>
-
 
 <footer>
   <p>James Gianoutsos — Engineering ePortfolio &nbsp;·&nbsp; UTS Mechanical Engineering &nbsp;·&nbsp; 2026</p>
