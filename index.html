@@ -499,6 +499,110 @@
     font-size: 15px;
     line-height: 1.56;
   }
+/* ── COVER LETTER ── */
+  #cover-letter {
+    background: var(--snow);
+  }
+
+  .cover-letter-doc {
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 12px;
+    padding: 3rem 3.5rem;
+    max-width: 720px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--near-black);
+  }
+
+  .cl-header {
+    margin-bottom: 2rem;
+  }
+
+  .cl-sender-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+  }
+
+  .cl-sender-meta {
+    font-size: 13px;
+    color: var(--stone);
+  }
+
+  .cl-sender-meta a {
+    color: var(--stone);
+    border-bottom: 1px solid var(--light-gray);
+  }
+
+  .cl-divider {
+    border: none;
+    border-top: 1px solid var(--light-gray);
+    margin: 1.5rem 0;
+  }
+
+  .cl-date {
+    font-size: 13px;
+    color: var(--stone);
+    margin-bottom: 1.5rem;
+  }
+
+  .cl-recipient {
+    font-size: 14px;
+    color: var(--near-black);
+    margin-bottom: 0.25rem;
+  }
+
+  .cl-re {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--near-black);
+    margin: 1rem 0 1.5rem;
+  }
+
+  .cl-salutation {
+    margin-bottom: 1rem;
+  }
+
+  .cl-body p {
+    margin-bottom: 1.25rem;
+  }
+
+  .cl-criteria {
+    margin: 1.5rem 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .cl-criterion {
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--light-gray);
+  }
+
+  .cl-criterion-heading {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: var(--stone);
+    margin-bottom: 0.5rem;
+  }
+
+  .cl-criterion p {
+    margin: 0;
+  }
+
+  .cl-sign-off {
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 600px) {
+    .cover-letter-doc {
+      padding: 2rem 1.5rem;
+    }
+  }
 
   /* ── FOOTER ── */
   footer {
@@ -612,6 +716,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#cv">CV</a></li>
     <li><a href="#reflection">Reflection</a></li>
+     <li><a href="#cover-letter">Cover Letter</a></li>
   </ul>
 </nav>
 
@@ -853,6 +958,81 @@
   </div>
 </section>
 
+<!-- COVER LETTER -->
+<section id="cover-letter">
+  <div class="container fade-in">
+    <p class="section-tag">Application</p>
+    <h2 class="section-title">Cover Letter</h2>
+    <p class="section-lead">Graduate Engineer application to Industrus Engineering.</p>
+
+    <div class="cover-letter-doc">
+      <div class="cl-header">
+        <div class="cl-sender-name">James Gianoutsos</div>
+        <div class="cl-sender-meta">+61 447 028 262 &nbsp;|&nbsp; <a href="mailto:jgianoutsos@me.com">jgianoutsos@me.com</a> &nbsp;|&nbsp; Sydney, Australia</div>
+      </div>
+
+      <hr class="cl-divider">
+
+      <div class="cl-date">15 March 2026</div>
+
+      <div class="cl-recipient">Hiring Team</div>
+      <div class="cl-recipient">Industrus Engineering</div>
+
+      <div class="cl-re">Re: Graduate Engineer Application</div>
+
+      <div class="cl-salutation">Dear Hiring Team,</div>
+
+      <div class="cl-body">
+        <p>I am writing to apply for the Graduate Engineer position at Industrus Engineering. As a final-year Mechanical Engineering student at UTS (WAM: Distinction), with over two years of hands-on experience as an Undergraduate Engineer and Project Manager at Fredon, I am confident I can contribute meaningfully to your team from day one.</p>
+        <p>My experience spans high-profile projects including Sydney Metro Gadigal Station, One Circular Quay (Waldorf Astoria), Starbucks' premier Australian fit-out, and the USYD Sydney Biomedical Accelerator — roles that have developed in me a rare combination of technical rigour and practical project management capability. I address the selection criteria below.</p>
+      </div>
+
+      <ul class="cl-criteria">
+        <li class="cl-criterion">
+          <div class="cl-criterion-heading">3.1 &nbsp;Commitment to ethical conduct and the highest standards of professional accountability</div>
+          <p>Throughout my time at Fredon, I consistently operated with integrity in client-facing and subcontractor environments. Managing contract variations, procurement processes, and sub-contract negotiations on major live projects required strict adherence to professional and ethical standards. I ensured that all scope, budget, and compliance requirements were transparently communicated and upheld. My manager commended my professionalism in managing these responsibilities independently and with minimal supervision.</p>
+        </li>
+
+        <li class="cl-criterion">
+          <div class="cl-criterion-heading">3.2 &nbsp;Demonstrated ability to effectively communicate with engineers and stakeholders from different fields</div>
+          <p>Communication has been one of my greatest strengths during my internship. Working across Sydney Metro, One Circular Quay, and the USYD Biomedical Accelerator, I regularly liaised with clients, project managers, consultants, subcontractors, and tradespeople — adapting my language and level of technical detail to suit each audience. My manager explicitly commended both my written and verbal communication, noting my ability to explain engineering topics clearly to non-engineers. This was one of the hardest but most rewarding skills I developed.</p>
+        </li>
+
+        <li class="cl-criterion">
+          <div class="cl-criterion-heading">3.3 &nbsp;The ability to engage with a creative, innovative and proactive environment</div>
+          <p>My internship consistently required creative problem-solving under real project constraints. On-site at Sydney Metro, I leveraged technical skills to rapidly resolve equipment issues, saving both time and money. Running the Starbucks Parkline Place fit-out independently required proactive coordination of five subcontractors with competing schedules and priorities. I thrive in fast-paced environments where initiative is valued, and I am energised by the opportunity Industrus offers to work across diverse and challenging projects nationwide.</p>
+        </li>
+
+        <li class="cl-criterion">
+          <div class="cl-criterion-heading">3.4 &nbsp;Demonstrated ability to use and manage information</div>
+          <p>Managing information effectively was central to my role across all projects. I used Microsoft Excel for budget tracking and procurement analysis, Revizto and Navisworks for design coordination and clash detection, and project management tools to maintain construction programmes. On the USYD Biomedical Accelerator, I managed the procurement of complex custom equipment, maintaining detailed records to ensure financial accountability. My academic background — applying thermodynamic modelling and data analysis in engineering contexts — further demonstrates my capacity to handle technical information rigorously.</p>
+        </li>
+
+        <li class="cl-criterion">
+          <div class="cl-criterion-heading">3.5 &nbsp;The ability to manage your own performance in a professional environment</div>
+          <p>I have repeatedly demonstrated the capacity to work autonomously in demanding commercial settings. From independently running the Starbucks fit-out to managing procurement and sub-contract negotiations on the Biomedical Accelerator, I operated with minimal supervision across high-stakes deliverables. I proactively sought feedback, set my own priorities, and consistently met project timelines and budget targets. Balancing a demanding engineering degree alongside full project management responsibilities further reflects my discipline and time management.</p>
+        </li>
+
+        <li class="cl-criterion">
+          <div class="cl-criterion-heading">3.6 &nbsp;A demonstrated ability to work as part of a team and to show leadership when required</div>
+          <p>Teamwork and leadership have been defining features of my experience. I worked collaboratively within Fredon's internal engineering teams while also coordinating across external consultants, subcontractors, and user groups on projects like the USYD Biomedical Accelerator. When leading the Starbucks fit-out, I took direct ownership of outcomes and held multiple subcontractors accountable to their scope. My colleagues recognised my contribution to complex project tasks, and I demonstrated the ability to lead when required while remaining a constructive team member in larger project environments.</p>
+        </li>
+      </ul>
+
+      <div class="cl-body">
+        <p>I am genuinely excited by the breadth and impact of Industrus' project portfolio and believe my background in building services, project management, and stakeholder engagement would translate directly to your graduate program. I have attached my resume and welcome the opportunity to discuss my application further.</p>
+        <p>Thank you for your consideration.</p>
+      </div>
+
+      <div class="cl-sign-off">
+        <p>Yours sincerely,</p>
+        <br>
+        <p><strong>James Gianoutsos</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+  
 <footer>
   <p>James Gianoutsos — Engineering ePortfolio &nbsp;·&nbsp; UTS Mechanical Engineering &nbsp;·&nbsp; 2026</p>
 </footer>
